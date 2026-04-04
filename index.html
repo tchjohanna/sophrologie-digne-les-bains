@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sylvie Pons — Sophrologie · Sonothérapie · Magnétisme</title>
+  <meta name="description" content="Sylvie Pons — Sophrologue, Sonothérapeute et Magnétiseur à Digne-les-Bains. Séances individuelles et en groupe pour retrouver équilibre, sérénité et mieux-être.">
+  <link rel="canonical" href="https://sophrologiedignelesbains.fr">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sage:       #7a9e7e;
+      --sage-light: #a8c5a0;
+      --sage-dark:  #4e7a52;
+      --beige:      #f5f0e8;
+      --beige-warm: #ede5d4;
+      --stone:      #c8bfac;
+      --stone-dark: #9c9080;
+      --ink:        #2e2a22;
+      --ink-light:  #5a5348;
+      --cream:      #faf8f3;
+      --white:      #ffffff;
+      --gold:       #b8965a;
+      --gold-light: #d4b07a;
+      --shadow:     rgba(46,42,34,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4rem;
+      height: 72px;
+      background: rgba(250,248,243,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--stone);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 24px var(--shadow); }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+    }
+    .nav-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+    }
+    .nav-logo-sub {
+      display: block;
+      font-size: 0.72rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      color: var(--stone-dark);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-light);
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 2px;
+      transition: color 0.3s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--sage);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--sage-dark); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--sage);
+      color: var(--white) !important;
+      padding: 0.5rem 1.4rem;
+      border-radius: 2px;
+      letter-spacing: 0.1em !important;
+      transition: background 0.3s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--sage-dark) !important; color: var(--white) !important; }
+
+    /* Burger */
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .burger span {
+      display: block;
+      width: 24px; height: 1.5px;
+      background: var(--ink);
+      transition: all 0.3s;
+    }
+    .burger.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--stone);
+      z-index: 99;
+      padding: 2rem;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 72px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(160deg, rgba(120,158,126,0.35) 0%, rgba(250,248,243,0) 55%),
+        url('image1.webp') center/cover no-repeat;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(250,248,243,0.88) 45%, rgba(250,248,243,0.1) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 580px;
+      padding: 4rem 4rem 4rem 8vw;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      border-left: 2px solid var(--sage);
+      padding-left: 0.8rem;
+      margin-bottom: 1.8rem;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--sage-dark);
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--ink-light);
+      margin-bottom: 2.5rem;
+      max-width: 420px;
+      font-weight: 300;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--sage);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 400;
+      border-radius: 2px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--sage-dark); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--stone-dark);
+      color: var(--ink-light);
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 400;
+      border-radius: 2px;
+      transition: border-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--sage); color: var(--sage-dark); transform: translateY(-1px); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--stone-dark);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      z-index: 2;
+      animation: scrollBounce 2.5s ease-in-out infinite;
+    }
+    .hero-scroll::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--stone-dark), transparent);
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section { padding: 7rem 8vw; }
+
+    .section-label {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--sage-dark);
+    }
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--sage-light);
+      margin: 1.8rem 0;
+    }
+
+    /* ─── PRATIQUES ─── */
+    #pratiques { background: var(--beige); }
+
+    .pratiques-intro {
+      max-width: 600px;
+      margin-bottom: 4rem;
+    }
+    .pratiques-intro p {
+      color: var(--ink-light);
+      font-size: 1rem;
+    }
+
+    .pratiques-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--stone);
+      margin-bottom: 3.5rem;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.8rem 2rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone-dark);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: all 0.3s;
+    }
+    .tab-btn:hover { color: var(--sage-dark); }
+    .tab-btn.active {
+      color: var(--sage-dark);
+      border-bottom-color: var(--sage);
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .pratiques-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .pratique-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      background: var(--cream);
+      padding: 1.8rem;
+      border-radius: 4px;
+      border: 1px solid rgba(200,191,172,0.4);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .pratique-card:hover {
+      box-shadow: 0 8px 32px var(--shadow);
+      transform: translateY(-2px);
+    }
+    .pratique-card img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .pratique-card-body p {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      line-height: 1.7;
+    }
+
+    /* ─── BIENVENUE ─── */
+    #bienvenue {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .bio-img-wrap {
+      position: relative;
+    }
+    .bio-img-wrap img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .bio-img-deco {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: 20px;
+      bottom: 20px;
+      border: 1px solid var(--sage-light);
+      border-radius: 4px;
+      z-index: -1;
+    }
+    .bio-img-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--sage);
+      color: var(--white);
+      padding: 1rem 1.4rem;
+      border-radius: 3px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.3;
+      text-align: center;
+    }
+    .bio-img-badge span {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-style: normal;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-top: 3px;
+    }
+
+    .bio-text { max-width: 520px; }
+    .bio-text p {
+      color: var(--ink-light);
+      margin-bottom: 1.2rem;
+      font-size: 0.97rem;
+    }
+
+    .bio-text .callout {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--sage-dark);
+      border-left: 2px solid var(--sage-light);
+      padding-left: 1.2rem;
+      margin: 2rem 0;
+      line-height: 1.5;
+    }
+
+    /* Gallery strip */
+    .gallery-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+    .gallery-strip img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 3px;
+      transition: opacity 0.3s;
+    }
+    .gallery-strip img:hover { opacity: 0.85; }
+
+    /* ─── TARIFS ─── */
+    #tarifs { background: var(--beige-warm); }
+
+    .tarifs-header { margin-bottom: 3.5rem; }
+
+    .tarifs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .tarif-card {
+      background: var(--cream);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(200,191,172,0.5);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .tarif-card:hover {
+      box-shadow: 0 12px 40px var(--shadow);
+      transform: translateY(-3px);
+    }
+    .tarif-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .tarif-card-body {
+      padding: 1.8rem;
+    }
+    .tarif-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .tarif-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--beige-warm);
+      font-size: 0.88rem;
+      color: var(--ink-light);
+    }
+    .tarif-line:last-child { border-bottom: none; }
+    .tarif-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--sage-dark);
+    }
+
+    .tarif-gift {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+      border-radius: 4px;
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .tarif-gift::before {
+      content: '✦';
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 8rem;
+      color: rgba(255,255,255,0.06);
+      line-height: 1;
+    }
+    .tarif-gift-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+    .tarif-gift-text p {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.9rem;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--cream); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      margin-top: 3.5rem;
+    }
+
+    .contact-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+    .contact-detail {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.2rem;
+    }
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--beige);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+    .contact-detail-text {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      line-height: 1.5;
+    }
+
+    .contact-img-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+    .contact-img-mosaic img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+    .contact-img-mosaic img:first-child {
+      grid-column: 1 / -1;
+      height: 200px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.45);
+      padding: 3rem 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      font-style: italic;
+    }
+    .footer-credits {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── NATURE DECO ─── */
+    .leaf-deco {
+      position: absolute;
+      opacity: 0.06;
+      pointer-events: none;
+      font-size: 12rem;
+      color: var(--sage-dark);
+      line-height: 1;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      nav { padding: 0 2rem; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      section { padding: 5rem 6vw; }
+      #bienvenue { grid-template-columns: 1fr; gap: 3rem; }
+      .tarifs-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-content { padding: 4rem 6vw; }
+    }
+
+    @media (max-width: 768px) {
+      .pratiques-grid { grid-template-columns: 1fr; }
+      .tarifs-grid { grid-template-columns: 1fr; }
+      .gallery-strip { grid-template-columns: repeat(3, 1fr); }
+      .hero-content { padding: 3rem 5vw; }
+      .tarif-gift { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <img src="logo.webp" alt="Logo Sylvie Pons">
+      <div class="nav-logo-text">
+        Sylvie Pons
+        <span class="nav-logo-sub">Sophrologie · Magnétisme · Sonothérapie</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#pratiques">Nos Pratiques</a></li>
+      <li><a href="#bienvenue">Bienvenue</a></li>
+      <li><a href="#tarifs">Tarifs</a></li>
+      <li><a href="#contact" class="nav-cta">Nous contacter</a></li>
+    </ul>
+    <div class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#pratiques" class="mobile-link">Nos Pratiques</a>
+    <a href="#bienvenue" class="mobile-link">Bienvenue</a>
+    <a href="#tarifs" class="mobile-link">Tarifs</a>
+    <a href="#contact" class="mobile-link">Nous contacter</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Digne-les-Bains & alentours</span>
+      <h1>Un chemin vers<br>votre <em>équilibre</em><br>intérieur</h1>
+      <p class="hero-desc">Sophrologie, Sonothérapie et Magnétisme — des pratiques douces et holistiques pour retrouver harmonie, sérénité et vitalité.</p>
+      <div class="hero-btns">
+        <a href="#pratiques" class="btn-primary">Découvrir nos soins</a>
+        <a href="#contact" class="btn-outline">Prendre rendez-vous</a>
+      </div>
+    </div>
+    <div class="hero-scroll">Découvrir</div>
+  </section>
+
+  <!-- PRATIQUES -->
+  <section id="pratiques">
+    <div class="pratiques-intro fade-in">
+      <span class="section-label">Nos Pratiques</span>
+      <h2 class="section-title">Trois approches,<br>une seule <em>intention</em></h2>
+      <div class="divider"></div>
+      <p>Des disciplines complémentaires qui s'adressent à votre corps, votre esprit et votre énergie, pour vous accompagner vers un mieux-être profond et durable.</p>
+    </div>
+
+    <div class="pratiques-tabs fade-in">
+      <button class="tab-btn active" data-tab="sophrologie">Sophrologie</button>
+      <button class="tab-btn" data-tab="sonotherapie">Sonothérapie</button>
+      <button class="tab-btn" data-tab="magnetisme">Magnétisme</button>
+    </div>
+
+    <div id="sophrologie" class="tab-panel active">
+      <div class="pratiques-grid">
+        <div class="pratique-card fade-in">
+          <img src="angoisses.webp" alt="Sophrologie">
+          <div class="pratique-card-body">
+            <p>Un entraînement personnel basé sur des techniques du corps et de l'esprit pour favoriser un mieux-être, un équilibre et une meilleure maîtrise de soi face aux événements de la vie.</p>
+          </div>
+        </div>
+        <div class="pratique-card fade-in">
+          <img src="sport.webp" alt="Respiration">
+          <div class="pratique-card-body">
+            <p>Grâce à des exercices de respiration, de visualisation positive et de relaxation dynamique, vous apprenez à mobiliser vos ressources pour avancer en toute sérénité.</p>
+          </div>
+        </div>
+        <div class="pratique-card fade-in">
+          <img src="img2.webp" alt="Équilibre">
+          <div class="pratique-card-body">
+            <p>Si un individu est capable de somatiser du négatif, il est tout aussi capable de somatiser du positif pour harmoniser ou rétablir un équilibre défaillant.</p>
+          </div>
+        </div>
+        <div class="pratique-card fade-in">
+          <img src="anxiete.webp" alt="Potentiel">
+          <div class="pratique-card-body">
+            <p>La sophrologie nous invite à reprendre notre pouvoir en laissant émerger notre potentiel. Nous devenons alors Acteur de notre vie !</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="sonotherapie" class="tab-panel">
+      <div class="pratiques-grid">
+        <div class="pratique-card">
+          <img src="burn-out.webp" alt="Bols tibétains">
+          <div class="pratique-card-body">
+            <p>La sonothérapie est une discipline de bien-être très ancienne basée sur l'utilisation des sons. Les bols transmettent leurs ondes bienfaitrices à votre corps, agissant sur le plan physique, nerveux et émotionnel.</p>
+          </div>
+        </div>
+        <div class="pratique-card">
+          <img src="sono.webp" alt="Vibrations">
+          <div class="pratique-card-body">
+            <p>Leurs fréquences induisent un état de relaxation profond, apaisent le système nerveux et permettent de débloquer des zones de tension. Les sons se diffusent au plus profond de votre être.</p>
+          </div>
+        </div>
+        <div class="pratique-card">
+          <img src="concentration.webp" alt="Molécules d'eau">
+          <div class="pratique-card-body">
+            <p>Les vibrations émises font bouger les molécules d'eau de notre corps (composé de 70 à 80 % d'eau) et les réinforment grâce à leurs ondes sonores positives et relaxantes.</p>
+          </div>
+        </div>
+        <div class="pratique-card">
+          <img src="embauche.webp" alt="Bienfaits">
+          <div class="pratique-card-body">
+            <p>Réduire le stress, induire le lâcher-prise, libérer les tensions et les blocages… les sons peuvent également réharmoniser les chakras et soutenir le pouvoir de guérison du corps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="magnetisme" class="tab-panel">
+      <div class="pratiques-grid">
+        <div class="pratique-card">
+          <img src="img2.webp" alt="Magnétisme">
+          <div class="pratique-card-body">
+            <p>Le magnétisme est un fluide que tout le monde possède. Notre rayonnement biologique naturel a des propriétés thérapeutiques puissantes : calmant, antalgique, anti-infectieux, cicatrisant, anti-inflammatoire…</p>
+          </div>
+        </div>
+        <div class="pratique-card">
+          <img src="img8.webp" alt="Auto-guérison">
+          <div class="pratique-card-body">
+            <p>C'est une méthode de soin naturelle qui permet au corps de retrouver son potentiel d'auto-guérison lorsque les énergies sont débloquées, rééquilibrées et réharmonisées.</p>
+          </div>
+        </div>
+        <div class="pratique-card">
+          <img src="image55.webp" alt="Corps & émotions">
+          <div class="pratique-card-body">
+            <p>Le magnétisme agit autant sur les douleurs physiques que psychiques et émotionnelles, pour une approche globale de la personne.</p>
+          </div>
+        </div>
+        <div class="pratique-card">
+          <img src="image14.webp" alt="Complémentaire">
+          <div class="pratique-card-body">
+            <p>Le recours au soin ne se substitue pas à un suivi médical traditionnel — il vient en complément et en accompagnement des traitements prescrits par le médecin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIENVENUE -->
+  <section id="bienvenue">
+    <div class="bio-img-wrap fade-in">
+      <div class="bio-img-deco"></div>
+      <img src="moi.png" alt="Sylvie Pons">
+      <div class="bio-img-badge">
+        10 ans<br>d'expérience
+        <span>en soins holistiques</span>
+      </div>
+    </div>
+    <div class="bio-text fade-in">
+      <span class="section-label">Bienvenue</span>
+      <h2 class="section-title">Parcours &amp; <em>Expertise</em></h2>
+      <div class="divider"></div>
+      <p>Depuis une dizaine d'années, je m'intéresse à l'énergétique, aux soins et à l'impact que peut avoir l'environnement sur le vivant.</p>
+      <div class="callout">
+        « Je propose des soins intuitifs alliant plusieurs techniques afin de favoriser un mieux-être tant dans son corps que dans son habitat. »
+      </div>
+      <p>J'ai entrepris des formations en géobiologie, soins énergétiques, magnétisme, sonothérapie et sophrologie. Riche de toutes ces expériences, chaque soin est adapté à la personne et à ses besoins du moment.</p>
+      <p>J'ai choisi de me former à la Sophrologie Caycédienne, transmise par son fondateur le Professeur Alfonso Caycedo — une pratique douce combinant de manière unique la respiration, la relaxation, le mouvement et la visualisation.</p>
+      <div class="gallery-strip">
+        <img src="image1.webp" alt="Paysage">
+        <img src="img4.webp" alt="Nature">
+        <img src="image22.webp" alt="Paysage 2">
+        <img src="image33.webp" alt="Paysage 3">
+        <img src="image55.webp" alt="Nature 2">
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIFS -->
+  <section id="tarifs">
+    <div class="tarifs-header fade-in">
+      <span class="section-label">Nos Tarifs</span>
+      <h2 class="section-title">Des soins <em>accessibles</em><br>à tous</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="tarifs-grid">
+      <div class="tarif-card fade-in">
+        <img src="image22.webp" alt="Sophrologie">
+        <div class="tarif-card-body">
+          <h3 class="tarif-card-title">Sophrologie</h3>
+          <div class="tarif-line">
+            <span>Séance individuelle adulte</span>
+            <span class="tarif-price">40 €</span>
+          </div>
+          <div class="tarif-line">
+            <span>Séance individuelle enfant (30 min)</span>
+            <span class="tarif-price">20 €</span>
+          </div>
+          <div class="tarif-line">
+            <span>Séance en groupe</span>
+            <span class="tarif-price">à partir de 12 €</span>
+          </div>
+        </div>
+      </div>
+      <div class="tarif-card fade-in">
+        <img src="image33.webp" alt="Magnétisme">
+        <div class="tarif-card-body">
+          <h3 class="tarif-card-title">Magnétisme</h3>
+          <div class="tarif-line">
+            <span>Séance individuelle</span>
+            <span class="tarif-price">à partir de 15 €</span>
+          </div>
+          <div class="tarif-line">
+            <span>Tarif selon la demande</span>
+            <span class="tarif-price">sur devis</span>
+          </div>
+        </div>
+      </div>
+      <div class="tarif-card fade-in">
+        <img src="sono.webp" alt="Sonothérapie">
+        <div class="tarif-card-body">
+          <h3 class="tarif-card-title">Sonothérapie</h3>
+          <div class="tarif-line">
+            <span>Séance individuelle</span>
+            <span class="tarif-price">50 €</span>
+          </div>
+        </div>
+      </div>
+      <div class="tarif-gift fade-in">
+        <div class="tarif-gift-text">
+          <h3>À s'offrir ou à offrir</h3>
+          <p>Vous souhaitez offrir un moment de bien-être à un proche ? Des bons cadeaux sont disponibles pour toutes nos prestations. Contactez-nous pour en savoir plus.</p>
+        </div>
+        <a href="#contact" class="btn-outline" style="border-color:rgba(255,255,255,0.5);color:white;white-space:nowrap;flex-shrink:0;">Me contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="fade-in">
+      <span class="section-label">Nous Contacter</span>
+      <h2 class="section-title">Commençons votre<br><em>chemin ensemble</em></h2>
+      <div class="divider"></div>
+      <p style="color:var(--ink-light);max-width:500px;">N'hésitez pas à me solliciter pour toute demande d'information ou pour prendre rendez-vous.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="fade-in">
+        <h3>Informations pratiques</h3>
+        <div class="contact-detail">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail-text">Digne-les-Bains et alentours<br>Alpes-de-Haute-Provence</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail-text">
+            <a href="tel:+33614330852" style="color:var(--sage-dark);text-decoration:none;font-weight:400;">06 14 33 08 52</a><br>
+            Sur rendez-vous uniquement
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">✉</div>
+          <div class="contact-detail-text">
+            <a href="mailto:contact@sophrologiedignelesbains.fr" style="color:var(--sage-dark);text-decoration:none;font-weight:400;">contact@sophrologiedignelesbains.fr</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">🌐</div>
+          <div class="contact-detail-text">
+            <a href="https://sophrologiedignelesbains.fr" target="_blank" style="color:var(--sage-dark);text-decoration:none;font-weight:400;">sophrologiedignelesbains.fr</a>
+          </div>
+        </div>
+        <div class="contact-img-mosaic">
+          <img src="image5.webp" alt="Nature">
+          <img src="img8.webp" alt="Cascade">
+          <img src="img4.webp" alt="Paysage">
+        </div>
+      </div>
+      <div class="fade-in">
+        <div style="background:var(--beige);border-radius:4px;padding:2.5rem;border:1px solid rgba(200,191,172,0.4);">
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;font-style:italic;color:var(--ink);margin-bottom:1rem;">Prendre rendez-vous</h3>
+          <p style="color:var(--ink-light);font-size:0.95rem;margin-bottom:2rem;">Pour toute demande d'information ou prise de rendez-vous, n'hésitez pas à me contacter par téléphone ou par email. Je vous répondrai dans les meilleurs délais.</p>
+          <a href="tel:+33614330852" class="btn-primary" style="display:block;text-align:center;margin-bottom:0.9rem;">
+            📞 &nbsp;Appeler le 06 14 33 08 52
+          </a>
+          <a href="mailto:contact@sophrologiedignelesbains.fr" class="btn-outline" style="display:block;text-align:center;">
+            ✉ &nbsp;Envoyer un email
+          </a>
+          <p style="margin-top:1.8rem;font-size:0.78rem;color:var(--stone-dark);text-align:center;letter-spacing:0.05em;">Du lundi au samedi · Sur rendez-vous</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Sylvie Pons — Soins Holistiques</div>
+    <div class="footer-credits">
+      © 2025 Sylvie Pons · Digne-les-Bains · Site développé par Johanna Castagna
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Burger menu
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  </script>
+</body>
+</html>
